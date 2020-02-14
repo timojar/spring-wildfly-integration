@@ -7,7 +7,7 @@ RUN ls -a
 
 FROM jboss/wildfly:18.0.0.Final
   
-COPY --from=build /tmp/target/SpringBootWithWildFly-0.0.1-SNAPSHOT.war /opt/jboss/wildfly/standalone/deployments/jboss-wildfly-demo.war
+COPY --from=build target/SpringBootWithWildFly-0.0.1-SNAPSHOT.war /opt/jboss/wildfly/standalone/deployments/jboss-wildfly-demo.war
 
 
-CMD ["--deploymentDir", "/opt/payara/deployments", "--contextroot", ""]
+
