@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: appdir/
+      dockerfile: Dockerfile-build    
+    ports:
+      - 8080:8080
+    container_name: mvw_build
+  test:
+    build:  
+      context: appdir/
+      dockerfile: Dockerfile-test
+    ports:
+      - 8080:8080
+    container_name: mvw_test
+
