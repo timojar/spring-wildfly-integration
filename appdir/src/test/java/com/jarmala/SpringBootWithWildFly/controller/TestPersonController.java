@@ -18,7 +18,7 @@ public class TestPersonController {
         System.out.println(inetAddress.getHostName());
         System.out.println(inetAddress.getHostAddress());
         ResponseEntity<String> response = testRestTemplate.
-                getForEntity("http://192.168.10.238:8080/hello" , String.class);
+                getForEntity(System.getenv("ipaddr")+":"+System.getenv("app_port") , String.class);
 
         assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
     }
