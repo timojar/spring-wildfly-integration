@@ -14,7 +14,13 @@ public class PersonController {
 
     @RequestMapping(value="/hello")
     @ResponseBody
-    public List<Person> hello(){
+    public String hello(){
+        return "hello world";
+    }
+
+    @RequestMapping(value="/all")
+    @ResponseBody
+    private List<Person> getPersons(){
 
         List<Person> personList=dummyPersons();
 
